@@ -1,4 +1,5 @@
 import Roact from "@rbxts/roact";
+import FirereRoact from "@firere/roact";
 
 // Core Hooks
 declare namespace RoactHooks {
@@ -64,7 +65,7 @@ declare namespace RoactHooks {
 		 * 
 		 *  @param defaultValue The default value of the binding.
 		 */
-		useBinding: <T>(defaultValue: T) => LuaTuple<[Roact.Binding<T>, (newValue: T) => void]>;
+		useBinding: <T>(defaultValue: T) => LuaTuple<[Roact.Binding<T> | FirereRoact.Binding<T>, (newValue: T) => void]>;
 		/**
 		 *  An alternative to `useState` that uses a reducer rather than state directly.
 		 *  If you’re familiar with Rodux, you already know how this works.
@@ -79,7 +80,7 @@ declare namespace RoactHooks {
 		/**
 		 * The roact version the library uses. This is useful if custom hooks need direct access to Roact.
 		 */
-		Roact: typeof Roact;
+		Roact: typeof Roact | typeof FirereRoact;
 	}
 }
 
@@ -105,7 +106,7 @@ declare namespace RoactHooks {
 	/**
 	 *  A Function Component
 	 */
-	export type FC<P = {}> = (props: Roact.PropsWithChildren<Readonly<P>>, hooks: CoreHooks) => Roact.Element;
+	export type FC<P = {}> = (props: Roact.PropsWithChildren<Readonly<P>> | FirereRoact.PropsWithChildren<Readonly<P>>, hooks: CoreHooks) => Roact.Element | FirereRoact.Element;
 	/**
 	 *  A reducer
 	 */
@@ -143,9 +144,13 @@ declare namespace RoactHooks {
 	export interface RoactContext<T> {
 		Provider: Roact.ComponentConstructor<{
 			value: T;
+		}> | FirereRoact.ComponentConstructor<{
+			value: T;
 		}>;
 		Consumer: Roact.ComponentConstructor<{
-			render: (value: T) => Roact.Element | undefined;
+			render: (value: T) => Roact.Element | FirereRoact.Element | undefined;
+		}> | FirereRoact.ComponentConstructor<{
+			render: (value: T) => Roact.Element | FirereRoact.Element | undefined;
 		}>;
 	}
 	/**
@@ -165,7 +170,7 @@ declare namespace RoactHooks {
 		 *  Returns a function that can be used to create a new Roact component with hooks.
 		 *  An optional dictionary can be passed in. The following are the valid keys that can be used, and what they do.
 		 */
-		new (roact: typeof Roact): <P extends { [key: string]: any } = {}>(
+		new (roact: typeof Roact | typeof FirereRoact): <P extends { [key: string]: any } = {}>(
 			render: FC<P>,
 			options?: {
 				/**
@@ -186,7 +191,7 @@ declare namespace RoactHooks {
 			}
 		) => (
 			props: P
-		) => Roact.Element;
+		) => Roact.Element | FirereRoact.Element;
 	}
 }
 
