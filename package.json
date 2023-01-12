@@ -1,13 +1,14 @@
 {
-  "name": "@rbxts/roact-hooks",
+  "name": "@firere/roact-hooks",
   "version": "0.4.1-ts.3",
-  "description": "Typings for Kampfkarren's roact-hooks module",
+  "description": "Typings for Kampfkarren's roact-hooks module, compatible with my version of Roact",
   "scripts": {},
   "keywords": [
     "roblox",
     "typescript",
     "roact",
-    "roact-hooks"
+    "roact-hooks",
+	"firere"
   ],
   "main": "src/init.lua",
   "typings": "src/index.d.ts",
@@ -21,13 +22,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HylianBasement/rbx-roact-hooks.git"
+    "url": "git+https://github.com/Fireret/rbx-roact-hooks.git"
   },
   "bugs": {
-    "url": "https://github.com/HylianBasement/rbx-roact-hooks/issues"
+    "url": "https://github.com/Fireret/rbx-roact-hooks/issues"
   },
-  "homepage": "https://github.com/HylianBasement/rbx-roact-hooks#readme",
+  "homepage": "https://github.com/Fireret/rbx-roact-hooks#readme",
   "devDependencies": {
+    "@firere/roact": "*",
     "@rbxts/compiler-types": "^1.3.3-types.0",
     "@rbxts/roact": "*",
     "@rbxts/types": "^1.0.571"
