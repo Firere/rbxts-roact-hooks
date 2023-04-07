@@ -1,7 +1,7 @@
 {
   "name": "@firere/roact-hooks",
-  "version": "0.5.1",
-  "description": "Typings for Kampfkarren's roact-hooks module, compatible with my version of Roact",
+  "version": "0.5.2",
+  "description": "Typings for Kampfkarren's roact-hooks module, compatible with my version of Roact and with some extra features",
   "scripts": {},
   "keywords": [
     "roblox",
@@ -28,10 +28,12 @@
     "url": "https://github.com/Firere/rbx-roact-hooks/issues"
   },
   "homepage": "https://github.com/Firere/rbx-roact-hooks#readme",
+  "dependencies": {
+	"@firere/roact": "*",
+	"@rbxts/roact": "*"
+  },
   "devDependencies": {
-    "@firere/roact": "*",
     "@rbxts/compiler-types": "^1.3.3-types.0",
-    "@rbxts/roact": "*",
     "@rbxts/types": "^1.0.571"
   },
   "files": [

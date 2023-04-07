@@ -84,7 +84,7 @@ function Hooks.new<Props>(roact)
 			self.hooks = createHooks(roact, self)
 		end
 
-		function classComponent:runEffects()
+		function classComponent:runEffects(didMount: boolean)
 			for index = 1, self.hookCounter do
 				local effectData = self.effects[index]
 				if effectData == nil then
@@ -97,6 +97,21 @@ function Hooks.new<Props>(roact)
 					local lastDependencies = self.effectDependencies[index]
 					if lastDependencies ~= nil and not dependenciesDifferent(dependsOn, lastDependencies) then
 						continue
+					end
+
+					if didMount then
+						local shouldSkip = false
+
+						for _, dependency in ipairs(dependsOn) do
+							if dependency == "didMount" then
+								shouldSkip = true
+								break
+							end
+						end
+
+						if shouldSkip then
+							continue
+						end
 					end
 
 					self.effectDependencies[index] = dependsOn
@@ -112,7 +127,7 @@ function Hooks.new<Props>(roact)
 		end
 
 		function classComponent:didMount()
-			self:runEffects()
+			self:runEffects(true)
 		end
 
 		function classComponent:didUpdate()
