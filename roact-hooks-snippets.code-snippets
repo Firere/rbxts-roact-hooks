@@ -3,8 +3,8 @@
                 "prefix": "rofc",
                 "description": "Create a Functional Component",
                 "body": [
-                        "import Roact from \"@rbxts/roact\";",
-                        "import Hooks from \"@rbxts/roact-hooks\";",
+                        "import Roact from \"@firere/roact\";",
+                        "import Hooks from \"@firere/roact-hooks\";",
                         "",
                         "const ${1:${TM_FILENAME_BASE}}: Hooks.FC = (_, {}) => {",
                         "\treturn <></>;",
@@ -17,8 +17,8 @@
                 "prefix": "rofcp",
                 "description": "Create a Functional Component with Props",
                 "body": [
-                        "import Roact from \"@rbxts/roact\";",
-                        "import Hooks from \"@rbxts/roact-hooks\";",
+                        "import Roact from \"@firere/roact\";",
+                        "import Hooks from \"@firere/roact-hooks\";",
                         "",
                         "interface ${TM_FILENAME_BASE}Props {}",
                         "",
