@@ -4,19 +4,19 @@
 	<a href="https://github.com/roblox-ts/roblox-ts">
 		<img src="https://img.shields.io/badge/github-roblox_typescript-red.svg" alt="roblox-ts"></img>
 	</a>
-	<a href="https://www.npmjs.com/package/@rbxts/roact-hooks">
-		<img src="https://badge.fury.io/js/%40rbxts%2Froact-hooks.svg"></img>
+	<a href="https://www.npmjs.com/package/@firere/roact-hooks">
+		<img src="https://badge.fury.io/js/%40firere%2Froact-hooks.svg"></img>
 	</a>
 </div>
 
 <div align="center">
-	A typescript port of the <a href="https://github.com/Kampfkarren/roact-hooks">Roact-Hooks</a> module. 
+	A typescript port of the <a href="https://github.com/Kampfkarren/roact-hooks">Roact-Hooks</a> module, compatible with <a href="https://www.npmjs.com/package/@firere/roact">my version of Roact</a>.
 	An implementation of <a href="https://reactjs.org/docs/hooks-intro.html">React hooks</a> for Roact.
 </div>
 
 <br/>
 <div align="center">
-        <pre>npm i <a href="https://www.npmjs.com/package/@rbxts/roact-hooks">@rbxts/roact-hooks</a></pre>
+        <pre>npm i <a href="https://www.npmjs.com/package/@firere/roact-hooks">@firere/roact-hooks</a></pre>
 </div>
 <br/>
 
@@ -37,8 +37,8 @@ Provides a mechanism for verifying inputs passed into the component.
 ### Example
 `ClickCounter.tsx`
 ```tsx
-import Roact from "@rbxts/roact";
-import Hooks from "@rbxts/roact-hooks";
+import Roact from "@firere/roact";
+import Hooks from "@firere/roact-hooks";
 
 const ClickCounter: Hooks.FC = (_props, { useState }) => {
 	const [counter, setCounter] = useState(0);
