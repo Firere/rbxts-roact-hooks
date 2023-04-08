@@ -1,6 +1,6 @@
 {
   "name": "@firere/roact-hooks",
-  "version": "0.5.2",
+  "version": "0.5.2-ts.1",
   "description": "Typings for Kampfkarren's roact-hooks module, compatible with my version of Roact and with some extra features",
   "scripts": {},
   "keywords": [

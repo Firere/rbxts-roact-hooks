@@ -147,6 +147,15 @@ function Hooks.new<Props>(roact)
 		function classComponent:render()
 			self.hookCounter = 0
 
+			-- To account for roblox-ts's special attributes: https://roblox-ts.com/docs/guides/roact-jsx#special-attributes
+			for attribute, _ in pairs(self.props) do
+				if attribute == "Change" or attribute == "Event" or attribute == "Ref" then
+					for roactAttribute, value in pairs(self.props[attribute]) do
+						self.props[roact[attribute][roactAttribute]] = value
+					end
+				end
+			end
+
 			return render(self.props, self.hooks)
 		end
 
