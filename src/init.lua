@@ -153,6 +153,8 @@ function Hooks.new<Props>(roact)
 					for roactAttribute, value in pairs(self.props[attribute]) do
 						self.props[roact[attribute][roactAttribute]] = value
 					end
+
+					self.props[attribute] = nil
 				end
 			end
 
